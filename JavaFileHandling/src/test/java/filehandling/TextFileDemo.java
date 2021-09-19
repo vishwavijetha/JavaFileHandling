@@ -5,6 +5,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Scanner;
 
 public class TextFileDemo {
 
@@ -37,6 +38,16 @@ public class TextFileDemo {
 
 		// Read using Files class
 		System.out.println(Files.readAllLines(Paths.get(path)));
+		
+		// Read using Scanner
+		Scanner	scanner = new Scanner(file);
+		while(scanner.hasNextLine()) {
+			System.out.println(scanner.nextLine());
+		}
+		scanner.close();
+		
+		// System.out.println(file.length());
+		// file.delete();
 
 	}
 
